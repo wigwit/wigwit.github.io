@@ -78,7 +78,8 @@
 
     const instruction = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: "<p>This is the instruction page<\p> and it is under construction"
+      stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否符合语境。问卷共40道题，填写大约需要5分钟。在选择时只需要判断表达方式是否正确即可。",
+      prompt:"Press Any Keys to Start",
     };
 
     const survey = {
@@ -132,5 +133,6 @@
     };
 
     jsPsych.run([instruction,trial_timeline,save_data]);
+    //jsPsych.endExperiment('You have sucessfully completed the task. If you have any questions, feel free to contact us via email')
   </script>
 </html>
