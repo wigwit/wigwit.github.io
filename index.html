@@ -11,7 +11,7 @@
   </head>
   <body></body>
   <script>
-    const jsPsych = initJsPsych();
+    const jsPsych = initJsPsych({experiment_width:1000});
 
     // initializing modal variables before the start of the trial, need to come back to this later
 
@@ -80,6 +80,7 @@
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p><strong>中文情态动词的调查问卷</strong><\p> 这个调查问卷旨在研究不同语境下，情态动词的用法。受试者需要根据语境判断表达方式是否符合语境。问卷共40道题，填写大约需要5分钟。在选择时只需要判断表达方式是否正确即可。",
       prompt:"Press Any Keys to Start",
+      trial_duration:100000
     };
 
     const survey = {
@@ -126,13 +127,18 @@
                 data_string: ()=>jsPsych.data.get().csv()
               };
 
+    const exit_instruction = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: "This is the end of the experiment. You can close the window now. If you have any questions, feel free to contact us at <a href='mailto:qg07@uw.edu'>qg07@uw.edu</a>",
+            trial_duration:60000,
+            //on_finish: function(){jsPsych.endExperiment()}
+    };
 
     var trial_timeline = {
       timeline: [survey],
       timeline_variables: question_info
     };
 
-    jsPsych.run([instruction,trial_timeline,save_data]);
-    //jsPsych.endExperiment('You have sucessfully completed the task. If you have any questions, feel free to contact us via email')
+    jsPsych.run([instruction,trial_timeline,save_data,exit_instruction]);
   </script>
 </html>
