@@ -64,7 +64,7 @@ var context_info=[
    },
    {
       "Context":"语文老师不怎么靠谱。他的学生永远都不知道他是否会准时来上课。有时他来，有时他不来。现在距离他的课程开始还有两个小时，班上的学生正在等待上课，他们心想：",
-      "Sentence":"老师今天[MODAL][CONCORD]会来学校上课",
+      "Sentence":"老师今天[MODAL][CONCORD]来学校上课",
       "Expression":"可能",
       "Force":"Possibility",
       "Flavor":"Epistemic",
