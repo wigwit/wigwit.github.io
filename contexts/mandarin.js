@@ -499,7 +499,8 @@ var context_info=[
 
 // I removed 肯定 here since it should be similar to 一定
 var modals = ["一定","应该","可能","必须","绝对","可以","也许","需要"];
-var concords = ["会","要","能","得"];
+// I removed 能
+var concords = ["会","要","得"];
 // let modals = new Array();
 
 // for (let i = 0; i < context_info.length;i++)
