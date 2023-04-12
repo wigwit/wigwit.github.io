@@ -33,12 +33,20 @@
         {
           c = all_info[i].Context;
           exp = all_info[i].Sentence;
-          m = all_info[i].Expression;
-          s = exp.replace("[MODAL]",m);
-          s1 = s.replace("[MODAL]",m);
+          let all_exp = new Array();
+          for(let j =0;j<modals.length;j++)
+          {
+            var m = modals[j];
+            s = exp.replace("[MODAL]",m);
+            s1 = s.replace("[MODAL]",m);
+            all_exp.push(s1);
+          }
+          // m = all_info[i].Expression;
+          // s = exp.replace("[MODAL]",m);
+          // s1 = s.replace("[MODAL]",m);
           // s2 = s1.replace("[CONCORD]",concord);
           // s3 = s2.replace("[CONCORD]",concord);
-          var info = {context:c,expressions:s1,index:all_info[i].Index};
+          var info = {context:c,expressions:all_exp,index:all_info[i].Index};
           final_contexts.push(info);
         }
       }
@@ -100,14 +108,16 @@
               //   return `${jsPsych.timelineVariable("context")}\n${jsPsych.timelineVariable('expressions')}`
               //   //return  c+'\n'+m;
               // },
-              options: function(){var c_i=jsPsych.timelineVariable('expressions');
+              options: function(){var c_exp=jsPsych.timelineVariable('expressions');
               let o = new Array();
+              for (var j = 0;j<c_exp.length;j++){ 
+                var c_i = c_exp[j];
               for (var i = concords.length - 1; i >= 0; i--) {
                 var s = c_i.replace('[CONCORD]',concords[i]);
                 o.push(s);
               }
               var n = c_i.replace('[CONCORD]','');
-              o.push(n);
+              o.push(n);}
                return o;},
               required: true
             }
