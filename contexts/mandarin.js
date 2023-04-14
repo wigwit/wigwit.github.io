@@ -1,7 +1,7 @@
 var context_info=[
    {
       "Context":"小明每天下午三点都会去游泳，尽管这只是他自己的习惯，他没有义务也没有被要求每天去。现在是下午三点了，所以",
-      "Sentence":"小明现在[MODAL][CONCORD]在游泳",
+      "Sentence":"小明现在[MODAL]在游泳",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -10,7 +10,7 @@ var context_info=[
    },
    {
       "Context":"你知道小红每天早上九点去上学。你看了看钟，发现现在是九点整，所以你判断：",
-      "Sentence":"小红[MODAL][CONCORD]在学校",
+      "Sentence":"小红[MODAL]去上学了",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -19,7 +19,7 @@ var context_info=[
    },
    {
       "Context":"数学老师说，“球在第一个箱子，或者第二个箱子，或者第三个箱子里。它不在第一个箱子里。 它也不在 第二个箱子里。所以，",
-      "Sentence":"球[MODAL][CONCORD]在c里面",
+      "Sentence":"球[MODAL]在c里面",
       "Expression":"绝对",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -28,7 +28,7 @@ var context_info=[
    },
    {
       "Context":"小明在叫他的小狗过来。小狗没有来。小明在屋里的所有地方找小狗，但小狗都不在。 因此，小明得出结论：",
-      "Sentence":"小狗[MODAL][CONCORD]不在屋内",
+      "Sentence":"因为屋内找不到小狗，所以小狗[MODAL]在屋外",
       "Expression":"一定",
       "Force":"Necessity",
       "Flavor":"Epistemic",
@@ -73,7 +73,7 @@ var context_info=[
    },
    {
       "Context":"小方正在寻找她的项链。 她不记得她最后一次是在哪里看到项链。她检查了她的首饰盒，但项链不在那里面。不过，还有几个地方她没有检查过，比如她的车。",
-      "Sentence":"小方[MODAL][CONCORD]弄丢她的项链了。",
+      "Sentence":"小方[MODAL][CONCORD]是弄了丢她的项链。",
       "Expression":"也许",
       "Force":"Possibility",
       "Flavor":"Epistemic",
@@ -91,7 +91,7 @@ var context_info=[
    },
    {
       "Context":"小李住在伦敦，他的朋友最近搬到了纽约。 小李的父母不允许他去纽约看他的朋友，因为纽约离伦敦太远了。 你听说小李下周要出游，但你不知道他会去哪里。 小李很叛逆，经常做一些不被允许的事情。于是你想：",
-      "Sentence":"小李[MODAL][CONCORD]在纽约",
+      "Sentence":"小李[MODAL][CONCORD]去纽约",
       "Expression":"可能",
       "Force":"Possibility",
       "Flavor":"Epistemic",
@@ -154,7 +154,7 @@ var context_info=[
    },
    {
       "Context":"根据医院的规定，只有探视时间内可以进入病房。你来探望你的妹妹，但是已经过了探视的时间。非常善良/人很好的护士说……",
-      "Sentence":"你[MODAL][CONCORD]进入。",
+      "Sentence":"你[MODAL][CONCORD]进来探望。",
       "Expression":"可以",
       "Force":"Possibility",
       "Flavor":"Deontic",
@@ -269,15 +269,19 @@ var context_info=[
       "polarity":"positive",
       "Index":-32
    },
+   // need to come back
    {
       "Context":"你在前往 地点A 的公交车上。你已经有 4 个小时没上厕所了，而且你很尿急。你给你的朋友发短信……",
-      "Sentence":"我[MODAL][CONCORD]上一下厕所！",
+      "Sentence":"我[MODAL][CONCORD]去一下厕所！",
       "Expression":"需要",
       "Force":"Necessity",
       "Flavor":"Circumstantial",
       "polarity":"positive",
       "Index":33
    },
+
+   //need to come back
+   // the car need to get fuel
    {
       "Context":"谈话谈到一半，你想要打喷嚏……你说：",
       "Sentence":"对不起！ 我[MODAL][CONCORD]打个喷嚏。",
@@ -296,6 +300,8 @@ var context_info=[
       "polarity":"positive",
       "Index":35
    },
+
+   // can we change it to we can grow duku trees here
    {
       "Context":"小张来到菲律宾的一个小岛。 她注意到气候和许多植物与她在印度尼西亚访问的一些地方相似。 温度一样，雨量一样，岩石种类和土壤都一样。 但是当她环顾四周时，她并没有在任何地方找到任何独库树。 但是因为温度、降雨量和土壤是相同的，她认为……",
       "Sentence":"独库树[MODAL][CONCORD]在这里生长。",
@@ -305,9 +311,12 @@ var context_info=[
       "polarity":"positive",
       "Index":36
    },
+
+
+   // weird might need to come back
    {
       "Context":"小明之前在意大利学会了怎么做传统的意面。现在小明回到了他自己的国家。他想做传统的意面，但是所需的原材料在他住的地方售罄了。他很沮丧，因为他想要向他的父母展示如何制作传统的意大利面。",
-      "Sentence":"尽管没有所需要的原材料，但是小明[MODAL][CONCORD]做传统的意大利面。",
+      "Sentence":"尽管没有所需要的原材料导致小明没办法做，但是小明[MODAL][CONCORD]做传统的意大利面。",
       "Expression":"会",
       "Force":"Possibility",
       "Flavor":"Circumstantial",
@@ -342,8 +351,8 @@ var context_info=[
       "Index":40
    },
    {
-      "Context":"你很喜欢音乐家K要开演唱会了，于是你说： ",
-      "Sentence":"我[MODAL][CONCORD]去看K的演唱会。",
+      "Context":"你很喜欢音乐家K要开演唱会了，于是你说：",
+      "Sentence":"太棒了！我[MODAL][CONCORD]去看K的演唱会。",
       "Expression":"想",
       "Force":"Necessity",
       "Flavor":"Bouletic",
@@ -359,6 +368,7 @@ var context_info=[
       "polarity":"positive",
       "Index":42
    },
+   // does not fit into the context
    {
       "Context":"小天跟他的父母说：",
       "Sentence":"我的朋友[MODAL][CONCORD]来我们家玩。",
